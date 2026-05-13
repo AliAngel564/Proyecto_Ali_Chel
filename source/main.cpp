@@ -78,9 +78,12 @@ public:
     
     void CheckInventory()
     {
+        int index = 1;
+
         for(Item i : Inventario)
         {
-
+            std::cout<<index<<". "<<i.GetNombreItem()<<"/n"<<i.GetDescripcionItem()<<std::endl;
+            index+=1;
         }
     }
 };
