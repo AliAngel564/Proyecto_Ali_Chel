@@ -88,6 +88,18 @@ public:
             index+=1;
         }
     }
+
+    int GetXP()
+    {
+        return XP;
+    }
+
+    void GenerateXP()
+    {
+        srand(time(0));
+        rand() % (10 - 5 +1) + 5;
+    }
+    
 };
 
 class Jugador : public Personaje{
@@ -106,6 +118,8 @@ public:
     {
 
     }
+
+   
 };
 
 void fn_PressAnyKey();
@@ -118,11 +132,21 @@ void fn_EncuentroCombate(Jugador& _j, Enemigo& _e);
 
 int main()
 {
+	
+
     Jugador j(10,20,"Juan",5,0);
     Enemigo e(20,5,"el diablo", 5, 5);
 
-    fn_EncuentroCombate(j,e);
+    //fn_EncuentroCombate(j,e);
 
+    e.GenerateXP();
+
+    std::cout<<"Enemigo XP: "<<e.GetXP();
+    fn_PressAnyKey();
+    std::cout<<"Enemigo XP: "<<e.GetXP();
+    fn_PressAnyKey();
+    std::cout<<"Enemigo XP: "<<e.GetXP();
+    fn_PressAnyKey();
 }
 
 void fn_PressAnyKey()
