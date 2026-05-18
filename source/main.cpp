@@ -41,14 +41,16 @@ private:
     int vida;
     int danio;
     int defensa;
+    int XP;
     std::vector<Item> Inventario;
 public:
-    Personaje(int _vida, int _danio, std::string _nombre, int _defensa)
+    Personaje(int _vida, int _danio, std::string _nombre, int _defensa,int _XP)
     {
         vida = _vida;
         danio = _danio;
         nombre = _nombre;
         defensa = _defensa;
+        XP = _XP;
     }
 
     void fn_TomarDanio(int danioATomar)
@@ -91,7 +93,7 @@ public:
 class Jugador : public Personaje{
 
 public:
-    Jugador(int _vida, int _danio, std::string _nombre, int _defensa): Personaje(_vida,_danio,_nombre, _defensa)
+    Jugador(int _vida, int _danio, std::string _nombre, int _defensa,int _XP): Personaje(_vida,_danio,_nombre, _defensa, _XP)
     {
 
     }
@@ -100,13 +102,14 @@ public:
 class Enemigo : public Personaje
 {
 public:
-    Enemigo(int _vida, int _danio, std::string _nombre, int _defensa): Personaje(_vida,_danio,_nombre, _defensa)
+    Enemigo(int _vida, int _danio, std::string _nombre, int _defensa,int _XP): Personaje(_vida,_danio,_nombre, _defensa, _XP)
     {
 
     }
 };
 
 void fn_PressAnyKey();
+void fn_MenuJuego();
 void fn_MostrarMenuCombate();
 void fn_MostrarVida(Jugador _j, Enemigo _e);
 void fn_JugadorAtaca(Jugador& _j, Enemigo& _e);
@@ -115,8 +118,8 @@ void fn_EncuentroCombate(Jugador& _j, Enemigo& _e);
 
 int main()
 {
-    Jugador j(10,20,"Juan",5);
-    Enemigo e(20,5,"el diablo", 5);
+    Jugador j(10,20,"Juan",5,0);
+    Enemigo e(20,5,"el diablo", 5, 5);
 
     fn_EncuentroCombate(j,e);
 
@@ -209,6 +212,13 @@ void fn_EncuentroCombate(Jugador& _j, Enemigo& _e)
     {
         std::cout<<"Felicidades! derrotaste a "<<_e.GetNombre();
     }
+}
+
+void fn_MenuJuego()
+{
+    std::cout<<"~~~~~~~~~~ NECROMANCER ~~~~~~~~~~"<<std::endl;
+    std::cout<<"1.- Entrar a Mazmorra"<<std::endl;
+    std::cout<<"2.- Ir al pueblo"<<std::endl;
 }
 
 
