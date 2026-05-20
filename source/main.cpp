@@ -35,6 +35,7 @@ public:
     }
 };
 
+
 class Personaje{
 private:
     std::string nombre;
@@ -129,6 +130,7 @@ void fn_MostrarVida(Jugador _j, Enemigo _e);
 void fn_JugadorAtaca(Jugador& _j, Enemigo& _e);
 void fn_EnemigoAtaca(Jugador& _j, Enemigo& _e, int _opcion);
 void fn_EncuentroCombate(Jugador& _j, Enemigo& _e);
+void fn_ExplorarPueblo();
 
 int main()
 {
@@ -245,4 +247,29 @@ void fn_MenuJuego()
     std::cout<<"2.- Ir al pueblo"<<std::endl;
 }
 
+void fn_TiendaItems()
+{
+    std::cout<< "~~~~~~~~~~ TIENDA ~~~~~~~~~~"<<std::endl;
+    std::cout<< " ";
+}
+
+void fn_ExplorarPueblo()
+{
+    int opc;
+    while(true)
+    {
+        std::cout<<"~~~~~~~~~~PUEBLO~~~~~~~~~~"<<std::endl;
+        std::cout<<"1.-Tienda"<<std::endl;
+        std::cout<<"9.-Salir"<<std::endl;
+        std::cout<<"Opcion: ";
+        std::cin>>opc;
+        switch(opc)
+        {
+            case 1:
+
+        break;
+
+        }
+    }
+}
 
