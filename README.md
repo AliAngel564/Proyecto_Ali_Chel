@@ -8,6 +8,11 @@ Aventura de texto por turnos hecha en C++.
 
 ## Cómo compilar y ejecutar
 
+Entrar a carpeta source
+```bash
+cd source
+```
+
 **Linux / Mac**
 ```bash
 g++ necromancer.cpp -o necromancer
